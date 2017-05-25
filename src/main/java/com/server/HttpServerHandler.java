@@ -1,13 +1,5 @@
 package com.server;
 
-import javax.servlet.Servlet;
-import javax.servlet.http.HttpServlet;
-
-import com.server.http.connector.HttpNettyRequest;
-import com.server.http.connector.HttpNettyResponse;
-import com.server.http.connector.HttpRequestProcess;
-import com.server.http.connector.HttpStaticResourceProcess;
-
 import io.netty.channel.ChannelHandlerAdapter;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.http.FullHttpRequest;
@@ -23,7 +15,6 @@ public class HttpServerHandler extends ChannelHandlerAdapter{
 		log.error(cause);
 		ctx.close();
 	}
-	@Override
 	public void channelRead(ChannelHandlerContext ctx, Object msg)
 			throws Exception {
 		try {
